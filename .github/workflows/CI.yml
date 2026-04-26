@@ -4,6 +4,8 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
+      - name: Set compiler
+        run: echo "CXX=g++-11" >> $GITHUB_ENV
       - name: Get repo files
         uses: actions/checkout@v6
         with:
