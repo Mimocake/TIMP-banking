@@ -4,8 +4,6 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
-      - name: Set compiler
-        run: echo "CXX=g++-11" >> $GITHUB_ENV
       - name: Get repo files
         uses: actions/checkout@v6
         with:
@@ -17,7 +15,7 @@ jobs:
       - name: Run tests
         run: ./build/check
       - name: Install lcov
-        run: sudo apt install lcov
+        run: sudo apt install lcov=1.14
       - name: Make coverage configuration file
         run: lcov --capture --directory build/banking --output-file=cov.info
       - name: Get coverage percentage
