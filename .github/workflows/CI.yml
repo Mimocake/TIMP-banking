@@ -4,6 +4,11 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
+      - name: Set GCC 11
+        uses: egor-tensin/setup-gcc@v1
+        with:
+          version: 11
+          platform: x64
       - name: Get repo files
         uses: actions/checkout@v6
         with:
@@ -15,7 +20,7 @@ jobs:
       - name: Run tests
         run: ./build/check
       - name: Install lcov
-        run: sudo apt install lcov=1.14
+        run: sudo apt install lcov
       - name: Make coverage configuration file
         run: lcov --capture --directory build/banking --output-file=cov.info
       - name: Get coverage percentage
