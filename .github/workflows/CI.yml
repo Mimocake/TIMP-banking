@@ -25,4 +25,9 @@ jobs:
         run: lcov --capture --directory build/banking --gcov-tool /usr/bin/gcov-11 --output-file=cov.info
       - name: Get coverage percentage
         run: lcov --list cov.info
+      - name: Coveralls Upload
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: cov.info
 
