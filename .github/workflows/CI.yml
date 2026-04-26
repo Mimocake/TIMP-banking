@@ -1,0 +1,21 @@
+name: linux
+on: push
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repo files
+        uses: actions/checkout@v6
+        with:
+          submodules: true
+      - name: Configure build directory and options
+        run: cmake -H. -B build -D BUILD_TESTS=ON -D COLLECT_COVERAGE=ON
+      - name: Build project
+        run: cmake --build build
+      - name: Run tests
+        run: ./build/check
+      - name: Make coverage configuration file
+        run: lcov --capture --directory build/banking --output-file=cov.info
+      - name: Get coverage percentage
+        run: lcov --list cov.info
+
