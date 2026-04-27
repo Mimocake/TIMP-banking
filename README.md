@@ -2,7 +2,7 @@
 ## Homework
 ### Тестирование библиотеки Banking
 
-[![CI](https://github.com/Mimocake/TIMP-banking/actions/workflows/CI.yml/badge.svg(https://github.com/Mimocake/TIMP-banking/actions/workflows/CI.yml)]
+[![CI](https://github.com/Mimocake/TIMP-banking/actions/workflows/CI.yml/badge.svg)](https://github.com/Mimocake/TIMP-banking/actions/workflows/CI.yml)
 [![Coverage Status](https://coveralls.io/repos/github/Mimocake/TIMP-banking/badge.svg?branch=main)](https://coveralls.io/github/Mimocake/TIMP-banking?branch=main)
 
 После клонирования исходных файлов, а также подключения библиотеки **GTest**, для начала, напишем необходимые `CMakeLists.txt` для сборки проекта. Рассмотрим `CMakeLists.txt` внутри папки `banking`:
